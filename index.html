@@ -9,9 +9,9 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Ma boutique</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,44 +22,43 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Micros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Camera</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Stream</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Promotions
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">-50%</a></li>
+                  <li><a class="dropdown-item" href="#">-30%</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Invendus</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div>
+              <div class="d-inline-block" data-bs-toggle="tooltip" title="Mon panier" data-bs-placement="bottom">
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalPanier">
+                  <i class="bi bi-cart-fill"></i>
+                </button>
+              </div>
+              <div class="d-inline-block" data-bs-toggle="tooltip" title="Me connecter" data-bs-placement="bottom">
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalConnexion">
+                  <i class="bi bi-person-circle"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
-      <div class="bg-dark text-light p-2 d-flex justify-content-between">
-        MA NAVBAR 
-
-        <button type="button" class="btn btn-secondary position-relative rounded-pill">
-          <i class="bi bi-cart"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            3
-            <span class="visually-hidden">unread messages</span>
-          </span>
-        </button>
-      </div>
-
     </header>
     <main class="container">
       <div class="row mt-3 d-none d-sm-block">
@@ -72,23 +71,116 @@
           </ol>
         </nav>
       </div>
-
+    
       <div class="row">
         <aside class="list-group mt-3 col-12 col-lg-3 list-categories p-2 flex-lg-column flex-row overflow-auto">
-            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-              Rode
-            </a>
+          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            Rode
+          </a>
         </aside>
-
+    
         <section class="list-articles mt-3 text-center col-12 col-lg-9">
           <div class="row" id="allArticles">
-            
+    
           </div>
         </section>
-      </div>  
-
-
+      </div>
+    
+    
+    
     </main>
+    
+    <!-- Modal Panier -->
+    <div class="modal fade" id="modalPanier" tabindex="-1" aria-labelledby="modalPanierLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalPanierLabel">Mon panier</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Micro (50€)
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Description du micro</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Camera (100€)
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Description de la caméra
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Clé usb (5€)
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Description de la clé
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2">
+                <b>Total : 155€ TTC</b>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+            <button type="button" class="btn btn-primary">Valider le panier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal Connexion -->
+    <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="modalConnexionLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalConnexionLabel">Me connecter</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="password">
+              </div>
+              <div>
+                <button class="btn btn-outline-success">Connexion</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/scripts.js"></script>
   </body>
